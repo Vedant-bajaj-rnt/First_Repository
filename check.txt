@@ -1,1 +1,3 @@
-to check add function in git bash
+to check add function in git bash 
+
+now made some new changes
