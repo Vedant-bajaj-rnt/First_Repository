@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <title>registeration</title>
+</head>
+<body>
+    <div class="text-center">
+        <p class="h4 mb-4">Enter Data</p>
+    </div>
+    <div id="regis">
+        <form class="text-center border border-light p-5" action="/registeration" method="post">
+            {%csrf_token%}
+            <input class="form-control mb-4" placeholder="LOGIN_ID(Atleast 8 character)" required autofocus type="text" name="LOGIN_ID" id="login_id">
+            <input class="form-control mb-4" placeholder="PASSWORD(Atleast 8 character)" required type="text" name="PASSWORD" id="password">
+            <p><h7>Password should have special character b/t !-*</h7></p>
+            <button class="btn btn-info btn-block my-4" type="submit">Submit</button>
+        </form>
+</body>
+</html>

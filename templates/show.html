@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <title>Show Data</title>
+</head>
+<body>
+    {{msg}}
+    <h2 id="Heading">Show All Data</h2>
+    <a href="">backkk</a>
+    <div id="back">
+        <form action="/home">
+            {%for d1 in data%}
+            <input type="hidden" name="user2" id="user2" value="{{d1.USERID}}">
+            {%endfor%}
+            <button type="submit" rounded="true" class="btn btn-danger">BACK</button>
+        </form>
+    </div>
+    <div id="table" class="text-center">
+        <table class="table table-striped">
+            <thead>
+                <th scope="col">SR no.</th>
+                <th scope="col">NAME</th>
+                <th scope="col">SURNAME</th>
+                <th scope="col">BUTTONS</th>
+            </thead>
+            {%for d in data%}
+            <tr>
+                <td scope="row">{{forloop.counter}}</td>
+                <td>{{d.NAME}}</td>
+                <td>{{d.SURNAME}}</td>
+                <td>
+                    <a href="/edit?id={{d.ID}}">Edit</a>
+                    <a href="/delete?id={{d.ID}}">Delete</a>
+                </td>
+            </tr>
+            {%endfor%}
+        </table>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+</head>
+<body>
+    {{msg}}
+    <div id="show_record">
+        <form action="/show">
+            <input type="hidden" name="login_id" id="login_id" value="{{user2}}">
+            <button class="btn btn-info btn-block my-3" type="submit">Show Record</button>
+        </form>
+    </div>
+    <div>
+        <form action="/logout">
+            <input type="submit" value="Logout">
+        </form>
+    </div>
+    <div id="Enter_record" class="text-center">
+        <p class="h4 mb-4">Enter Data</p>
+        <form class="text-center border border-light p-5" action="/send" method="post">
+            {%csrf_token%}
+            <input type="hidden" name="login_id" id="login_id" value="{{user2}}">
+            <input class="form-control mb-4" placeholder="NAME" type="text" required id="name" name="name">
+            <input class="form-control mb-4" placeholder="SURNAME" type="text" required id="surname" name="surname">
+            <button class="btn btn-info btn-block my-4" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

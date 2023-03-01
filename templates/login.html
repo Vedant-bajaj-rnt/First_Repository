@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <title>Login Page</title>
+</head>
+<body>
+    <div id="login_page" class="text-center">
+        <div class="text-center">
+        <p class="h4 mb-4">Enter Data</p>
+        </div>
+        <form class="text-center border border-light p-5" action="/login" method="post">
+            {%csrf_token%}
+            <input class="form-control mb-4" placeholder="LOGIN_ID(Atleast 8 character)" required autofocus type="text" name="LOGIN_ID" id="login_id">
+            <input class="form-control mb-4" placeholder="PASSWORD(Atleast 8 character)" required type="text" name="PASSWORD" id="password">
+            <button class="btn btn-info btn-block my-4" type="submit">Submit</button>
+        </form>
+        <form action="/registeration">
+            <button class="btn btn-info btn-block my-4" type="submit" >Register</button>
+        </form>
+            
+    </div>
+    
+</body>
+</html>
